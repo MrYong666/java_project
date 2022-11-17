@@ -1,0 +1,73 @@
+
+spring:
+  datasource:
+    url: jdbc:mysql://192.168.0.51/db_account
+    username: root
+    password: qdhh123456
+    driver-class-name: com.mysql.jdbc.Driver
+
+    druid:
+      filters: stat,wall
+      aop-patterns: com.atguigu.boot.*  #监控SpringBean
+      filter:
+        stat:
+          slow-sql-millis: 2000
+          logSlowSql: true
+          enabled: false
+        wall:
+          enabled: true
+          config:
+            drop-table-allow: false
+      stat-view-servlet:
+        enabled: true
+        login-username: admin
+        login-password: admin
+        reset-enable: false
+      web-stat-filter:
+        enabled: true
+        url-pattern: /*
+        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+
+
+
+  jdbc:
+    template:
+      query-timeout: 5
+
+
+#person:
+#  user-name: zhangsan
+#  boss: false
+#  birth: 2019/12/12 20:12:33
+#  age: 18
+#  interests:
+#    - 篮球
+#    - 足球
+#  animal:
+#    - jerry
+#    - mario
+#  score:
+#    english:
+#      first: 30
+#      second: 40
+#    chinese: {first: 128,second: 136}
+#  math: [121,222]
+#  chinese: {first:128,second: 138}
+#  salarys: [11,22,33]
+
+
+
+
+
+server:
+  servlet:
+    encoding:
+      charset: utf-8
+      force: true
+      enabled: true
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  configuration:
+    map-underscore-to-camel-case: true
+
