@@ -10,6 +10,7 @@ import org.springframework.context.ConfigurableApplicationContext;
 @SpringBootApplication
 public class Boot05Application {
 
+    //aa
     public static void main(String[] args) {
         ConfigurableApplicationContext run =SpringApplication.run(Boot05Application.class, args);
         String[] beanDefinitionNames = run.getBeanDefinitionNames();
